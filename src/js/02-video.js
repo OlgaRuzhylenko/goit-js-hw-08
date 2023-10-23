@@ -36,6 +36,6 @@ function getCurrentTimeFromLocalStorage() {
 };
 
 getCurrentTimeFromLocalStorage()
-player.on('play', onPlay);
+player.on('timeupdate', onPlay);
 
 
