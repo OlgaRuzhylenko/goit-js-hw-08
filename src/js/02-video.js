@@ -7,12 +7,12 @@ const player = new Player(iframe);
 const onPlay = function (data) {
     const currentSeconds = data.seconds;
     console.log(currentSeconds);
-    const currentTime = 'videoplayer-current-time';
+    const currentTime = "videoplayer-current-time";
     localStorage.setItem(currentTime, JSON.stringify(currentSeconds));
 };
 
 function getCurrentTimeFromLocalStorage() {
-    const currentTime = localStorage.getItem('videoplayer-current-time')
+    const currentTime = localStorage.getItem("videoplayer-current-time")
 
     if (currentTime) {
         const timeOfPlayback = JSON.parse(currentTime);
