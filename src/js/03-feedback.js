@@ -4,8 +4,8 @@ const form = document.querySelector('.feedback-form');
 const emailInput = document.querySelector('input');
 const message = document.querySelector('textarea');
 const objInput = {
-    // email: '',
-    // message: ''
+    email: '',
+    message: ''
 };
 
 initFort();
@@ -23,7 +23,7 @@ function onFormInput(evt) {
 
     function onEmailInput(evt) {
     const emailValue = evt.target.value;
-    objInput.email = emailValue;
+    objInput.email = emailValue;    
     };
 
     function onTextareaInput(evt) {
@@ -31,7 +31,6 @@ function onFormInput(evt) {
     objInput.message = messageValue
     };
 
-    
     localStorage.setItem("feedback-form-state", JSON.stringify(objInput))
   };
 
@@ -48,7 +47,7 @@ function initFort() {
     if (storedInformation) {
         storedInformation = JSON.parse(storedInformation);
         console.log(storedInformation);
-        Object.entries(storedInformation).forEach(([email, message]) => {
+        Object.entries(storedInformation).forEach(([email, value]) => {
             console.log(email, message);
             form.elements[email].value = value;
         })
