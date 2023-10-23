@@ -34,7 +34,7 @@ function getCurrentTimeFromLocalStorage() {
     }
 };
 
-
+getCurrentTimeFromLocalStorage()
 player.on('play', onPlay);
 
 
