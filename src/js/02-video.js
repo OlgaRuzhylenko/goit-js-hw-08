@@ -1,15 +1,16 @@
 import Player from '@vimeo/player';
+import throttle from 'lodash.throttle';
 
 const iframe = document.querySelector('iframe');
 
 const player = new Player(iframe);
 
-const onPlay = function (data) {
+const onPlay = throttle(function (data) {
     const currentSeconds = data.seconds;
     console.log(currentSeconds);
     const currentTime = "videoplayer-current-time";
     localStorage.setItem(currentTime, JSON.stringify(currentSeconds));
-};
+}, 1000);
 
 function getCurrentTimeFromLocalStorage() {
     const currentTime = localStorage.getItem("videoplayer-current-time")
@@ -18,7 +19,7 @@ function getCurrentTimeFromLocalStorage() {
         const timeOfPlayback = JSON.parse(currentTime);
 
         player.setCurrentTime(timeOfPlayback).then(function (seconds) {
-            console.log("поточний час");
+            console.log("поточний час" + seconds);
         }).catch(function (error) {
             switch (error.name) {
                 case 'RangeError':
