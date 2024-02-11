@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback form</title>
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/localeStorage.css" />
+  </head>
+  <body>
+    <div class="js-form-container fb fb-v" style="width: 100vw">
+      <form class="form box js-form fb">
+        <input
+          class="js-input form-control"
+          name="url1"
+          placeholder="Img1"
+        />
+        <input
+          class="js-input form-control"
+          name="url2"
+          placeholder="Img2"
+        />
+        <input
+          class="js-input form-control"
+          name="tag"
+          placeholder="Tags"
+        />
+        <button class="form-control" type="submit">Add Image</button>
+      </form>
+
+      <div class="box" style="width: 80vw">
+        <ul class="js-list list gallery">
+          
+          
+        </ul>
+      </div>
+    </div>
+
+    <script type="module" src="./js/localeStorage.js"></script>
+  </body>
+</html>
